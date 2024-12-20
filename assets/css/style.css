@@ -75,6 +75,184 @@
   }
 }
 
+
+/* Default style for PC screens */
+.header-static .head {
+  font-size: 2rem; /* Larger font size for PC screens */
+  font-weight: bold;
+  text-align: center; /* Ensure it's centered */
+  margin: 0;
+}
+
+/* Responsive behavior for smaller screens */
+@media (max-width: 768px) {
+  .header-static .head {
+      font-size: 1.5rem; /* Adjust font size for smaller screens */
+      text-align: center; /* Keep centered on mobile too */
+  }
+}
+
+/* Background Colors */
+.bg-yellow {
+  background-color: rgba(247, 195, 46, 0.2);
+}
+
+.bg-navy {
+  background-color: rgba(29, 59, 83, 0.2);
+}
+
+.bg-purpl {
+  background-color: rgba(199, 169, 254, 0.2);
+}
+
+.bg-teal {
+  background-color: rgba(23, 162, 184, 0.2);
+}
+
+/* Icon Colors */
+.bg-yellow .icon i {
+  color: #f7c32e;
+}
+
+.bg-navy .icon i {
+  color: #1d3b53;
+}
+
+.bg-purpl .icon i {
+  color: #5c2db4;
+}
+
+.bg-teal .icon i {
+  color: #17a2b8;
+}
+
+/* General Styling */
+.reason-item {
+  border-radius: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.reason-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.reason-item h3 {
+  font-weight: bold;
+  margin: 15px 0 10px;
+}
+
+.reason-item p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+
+.card {
+  background-color: #fff;
+  border-radius: 8px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.card-text {
+  font-size: 1rem;
+  color: #555;
+}
+
+@media (max-width: 768px) {
+  .card-title {
+      font-size: 1.25rem;
+  }
+
+  .card-text {
+      font-size: 0.9rem;
+  }
+}
+
+
+.news-section {
+  background-color: #f8f9fa;
+}
+
+.news-section .section-header h3 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.news-carousel .news-item {
+  transition: transform 0.3s, box-shadow 0.3s;
+  background-color: #fff;
+}
+
+.news-carousel .news-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.news-carousel .news-item p {
+  font-size: 1rem;
+  color: #333;
+}
+
+
+/* Table Header Colors */
+.col-color-1 {
+  background-color: rgba(247, 195, 46, 0.1); /* Lighter Yellow */
+  color: #f7c32e;
+}
+
+.col-color-2 {
+  background-color: rgba(29, 59, 83, 0.1); /* Lighter Navy */
+  color: #1d3b53;
+}
+
+.col-color-3 {
+  background-color: rgba(111, 66, 193, 0.1); /* Lighter Purple */
+  color: #6f42c1;
+}
+
+.col-color-4 {
+  background-color: rgba(23, 162, 184, 0.1); /* Lighter Teal */
+  color: #17a2b8;
+}
+
+/* General Table Styling */
+.table {
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+.table th,
+.table td {
+  padding: 15px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+.table th {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.table tbody tr:nth-child(odd) {
+  background-color: rgba(0, 0, 0, 0.05); /* Subtle alternate row background */
+}
+
+
+
+
 body {
   margin: 0;
   font-family: var(--bs-body-font-family);
