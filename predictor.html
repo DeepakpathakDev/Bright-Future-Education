@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Predictor</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f8fe;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            text-align: center;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            color: #333;
+            margin: 0;
+        }
+
+        .header p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        form {
+            display: grid;
+            gap: 15px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #444;
+        }
+
+        input, select {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        button {
+            background-color: #4c6ef5;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #3b5bdb;
+        }
+
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #e3e8ee;
+            border-radius: 5px;
+            background-color: #f9fafc;
+        }
+
+        .college-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background: #ffffff;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .college-info {
+            font-size: 14px;
+            color: #333;
+        }
+
+        .rank {
+            background: #edf2ff;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            color: #4c6ef5;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>College Predictor</h1>
+        <p>Find the best college matches based on your CET score</p>
+    </div>
+
+    <div class="container">
+        <form id="predictorForm">
+            <div class="form-group">
+                <label for="cetScore">CET Score</label>
+                <input type="number" id="cetScore" placeholder="Enter your CET score" required />
+            </div>
+
+            <div class="form-group">
+                <label for="category">Category</label>
+                <select id="category" required>
+                    <option value="">Select your category</option>
+                    <option value="general">General</option>
+                    <option value="obc">OBC</option>
+                    <option value="sc">SC</option>
+                    <option value="st">ST</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="branch">Branch</label>
+                <select id="branch" required>
+                    <option value="">Select your branch</option>
+                    <option value="cse">Computer Science</option>
+                    <option value="ece">Electronics & Communication</option>
+                    <option value="mech">Mechanical</option>
+                    <option value="civil">Civil</option>
+                    <option value="eee">Electrical</option>
+                </select>
+            </div>
+
+            <button type="submit">Predict Colleges</button>
+        </form>
+
+        <div class="result" id="result">
+            <!-- Predicted colleges will be displayed here -->
+        </div>
+    </div>
+
+    <script>
+        const form = document.getElementById('predictorForm');
+        const resultDiv = document.getElementById('result');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const cetScore = parseInt(document.getElementById('cetScore').value);
+            const category = document.getElementById('category').value;
+            const branch = document.getElementById('branch').value;
+
+            let colleges = [];
+
+            if (cetScore >= 150) {
+                colleges = [
+                    { name: 'Veermata Jijabai Technological Institute', location: 'Mumbai, Maharashtra', rank: 1 },
+                    { name: 'College of Engineering, Pune', location: 'Pune, Maharashtra', rank: 2 }
+                ];
+            } else if (cetScore >= 100) {
+                colleges = [
+                    { name: 'Sinhgad Institute of Technology', location: 'Pune, Maharashtra', rank: 3 },
+                    { name: 'MIT Academy of Engineering', location: 'Pune, Maharashtra', rank: 4 }
+                ];
+            } else {
+                colleges = [
+                    { name: 'Local College of Engineering', location: 'Your City', rank: 5 },
+                    { name: 'Neighborhood Polytechnic', location: 'Nearby Town', rank: 6 }
+                ];
+            }
+
+            resultDiv.innerHTML = '<h2>Predicted Colleges</h2>';
+
+            colleges.forEach(college => {
+                resultDiv.innerHTML += `
+                    <div class="college-item">
+                        <div class="college-info">
+                            <strong>${college.name}</strong><br />
+                            ${college.location}
+                        </div>
+                        <div class="rank">Rank: ${college.rank}</div>
+                    </div>
+                `;
+            });
+        });
+    </script>
+</body>
+</html>
