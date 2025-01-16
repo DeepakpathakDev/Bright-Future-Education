@@ -1056,6 +1056,45 @@ var e = {
         }
     },
     // END: Pricing
+    /* Navbar Styling */
+.navbar {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+/* Notification Styling */
+.notification {
+  position: fixed;
+  top: -100px; /* Start off-screen */
+  left: 0;
+  width: 100%;
+  background-color: #ff9800;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  transition: top 0.5s ease-in-out;
+}
+
+/* Close Button Styling */
+.close-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
 
     // START: 26 Sticky element
     stickyElement: function () {
