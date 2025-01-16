@@ -75,15 +75,6 @@
   }
 }
 
-.modalconent {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: #FFD700;
-    width: 100%;
-    padding: 50px;
-}
 
 .breakingtitle {
 	font-size: 50px;
